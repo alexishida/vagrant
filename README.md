@@ -4,6 +4,22 @@ Vagrant
 My vagrant
 
 
+Itens Instalados
+---------------------
+
+    Git version (last version)
+    Redis server (last version)
+    Memcached (last version)
+    Postgres 9.4
+    JAVA
+        java version "1.8.0_66"
+        Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
+
+    Node v5.1.0 (NVM)
+    Rails 4.2.5 (RBENV)
+
+
 Instalação
 -----------
 

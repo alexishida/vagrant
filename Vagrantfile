@@ -32,7 +32,8 @@ Vagrant.configure("2") do |config|
   # Arquivos de configuração do provisionamento
   config.vm.provision :shell, :path => "scripts/inicial.sh"
   config.vm.provision :shell, :path => "scripts/git.sh"
-  #config.vm.provision :shell, :path => "scripts/ohmyzsh.sh", privileged: false
+  config.vm.provision :shell, :path => "scripts/docker.sh"
+  #config.vm.provision :shell, :path => "scripts/ohmyzsh.sh", privileged: false # Coming soon
   config.vm.provision :shell, :path => "scripts/postgresql.sh"
   config.vm.provision :shell, :path => "scripts/rbenv.sh"
   config.vm.provision :shell, :path => "scripts/nvm.sh", privileged: false
