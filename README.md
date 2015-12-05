@@ -18,7 +18,7 @@ Itens Instalados
 
     Node v5.1.0 (NVM)
     Rails 4.2.5 (RBENV)
-
+	Docker (last version)
 
 Instalação
 -----------
