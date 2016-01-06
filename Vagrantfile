@@ -7,6 +7,11 @@ date > /etc/vagrant_provisioned_at
 SCRIPT
 
 Vagrant.configure("2") do |config|
+
+  # Allow symbolic links into shared folder ( Execute terminal as the system administrator ) only Windows
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+  end
   
   config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/vivid64/versions/20151113.0.0/providers/virtualbox.box"
   config.vm.box = "ubuntu/vivid64"
@@ -39,7 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "scripts/nvm.sh", privileged: false
   config.vm.provision :shell, :path => "scripts/memcached.sh"
   config.vm.provision :shell, :path => "scripts/redis.sh"
-  config.vm.provision :shell, :path => "scripts/java.sh"
+  #config.vm.provision :shell, :path => "scripts/java.sh" #repository not working =(
   config.vm.provision :shell, :path => "scripts/final.sh"
 
 end
