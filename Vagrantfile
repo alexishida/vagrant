@@ -9,27 +9,33 @@ SCRIPT
 Vagrant.configure("2") do |config|
 
   # Allow symbolic links into shared folder ( Execute terminal as the system administrator ) only Windows
-  config.vm.provider "virtualbox" do |v|
-    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
-  end
-  
+  # config.vm.provider "virtualbox" do |v|
+  #  v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+  # end
+
   config.vm.box_url = "https://github.com/kraksoft/vagrant-box-ubuntu/releases/download/15.04/ubuntu-15.04-amd64.box"
   config.vm.box = "ubuntu/1504"
 
-  config.vm.host_name = "godzilla-kid" 
+  config.vm.host_name = "vagrandzilla"
   config.vm.provision "shell", inline: $script
 
-  config.vm.synced_folder "C:/desenvolvimento", "/home/vagrant/desenvolvimento"
+  # Windows
+  #config.vm.synced_folder "C:/desenvolvimento", "/home/vagrant/desenvolvimento"
+
+  #Linux
+  config.vm.synced_folder "/home/alexishida/desenvolvimento", "/home/vagrant/desenvolvimento"
 
   config.ssh.insert_key = false
 
   config.vm.provider "virtualbox" do |vb|
-     vb.memory = 2048
+     vb.memory = 4096
      vb.cpus = 4
   end
 
 
   # Port forwarding
+  config.vm.network "forwarded_port", guest: 80, host: 80 # Rails Server
+  config.vm.network "forwarded_port", guest: 8181, host: 8181 # Rails Server
   config.vm.network "forwarded_port", guest: 3000, host: 3000 # Rails Server
   config.vm.network "forwarded_port", guest: 5432, host: 5432 # Postgres
   config.vm.network "forwarded_port", guest: 15432, host: 15432  # Postgres
