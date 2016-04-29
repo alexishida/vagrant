@@ -13,8 +13,10 @@ Vagrant.configure("2") do |config|
   #  v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
   # end
 
-  config.vm.box_url = "https://github.com/kraksoft/vagrant-box-ubuntu/releases/download/15.04/ubuntu-15.04-amd64.box"
-  config.vm.box = "ubuntu/1504"
+
+  #config.vm.box_url = "file:///"
+  config.vm.box = "ubuntu/trusty64"
+
 
   config.vm.host_name = "vagrandzilla"
   config.vm.provision "shell", inline: $script

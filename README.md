@@ -1,4 +1,4 @@
-Vagrant 
+Vagrant
 =============
 
 My vagrant
@@ -6,14 +6,14 @@ My vagrant
 
 Itens Instalados
 ---------------------
-
+    Ubuntu Server 14.04
     Git version (last version)
     Redis server (last version)
     Memcached (last version)
     Postgres 9.4
-    Node v5.7.1 (NVM)
-    Ruby 2.3.0
-    Rails 4.2.5.2 (RBENV)
+    Node v6.0.0 (NVM)
+    Ruby 2.3.1
+    Rails 4.2.6 (RBENV)
 	Docker (last version)
 
 Pendentes
@@ -22,8 +22,8 @@ Pendentes
         java version "1.8.0_66"
         Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
         Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
-		
-	
+
+
 Instalação
 -----------
 
@@ -67,5 +67,5 @@ Em caso de erro de Hyper-V habilitado favor executar:
 
 Em caso problema de quebra de linha com o GIT no Windows
 Execute o comando abaixo no GIT do seu windows:
-    
+
     git config --global core.autocrlf false    

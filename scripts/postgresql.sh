@@ -1,6 +1,12 @@
 #!/bin/sh -e
 echo '-- Provisionando -> postgresql.sh --'
 
+
+sudo touch /etc/apt/sources.list.d/postgresql.list
+echo 'deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main' | sudo tee --append /etc/apt/sources.list.d/postgresql.list
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+
 PG_VERSION=9.4
 
 PG_CONF="/etc/postgresql/$PG_VERSION/main/postgresql.conf"
@@ -15,7 +21,7 @@ sudo -u postgres createdb -O vagrant activerecord_unittest
 sudo -u postgres createdb -O vagrant activerecord_unittest2
 
 # Criando uma copia do pg_hba_conf
-sudo cp "$PG_HBA" "$PG_HBA_BKP" 
+sudo cp "$PG_HBA" "$PG_HBA_BKP"
 
 # Edit postgresql.conf to change listen address to '*':
 sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "$PG_CONF"

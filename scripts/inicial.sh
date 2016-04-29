@@ -15,9 +15,8 @@ sudo sysctl -p
 
 
 # Atualizando fuso-horário Porto Velho
- sudo timedatectl set-timezone America/Porto_Velho
+sudo timedatectl set-timezone America/Porto_Velho
 
 # Atualizando apt-get
 sudo apt-get -y autoremove
 sudo apt-get -y update
-
