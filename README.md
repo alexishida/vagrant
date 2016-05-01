@@ -11,6 +11,7 @@ Itens Instalados
     Redis server (last version)
     Memcached (last version)
     Postgres 9.4
+    Mongodb 3.2
     Node v6.0.0 (NVM)
     Ruby 2.3.1
     Rails 4.2.6 (RBENV)

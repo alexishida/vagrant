@@ -52,6 +52,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, :path => "scripts/nvm.sh", privileged: false
   config.vm.provision :shell, :path => "scripts/memcached.sh"
   config.vm.provision :shell, :path => "scripts/redis.sh"
+  config.vm.provision :shell, :path => "scripts/mongodb.sh"
   #config.vm.provision :shell, :path => "scripts/java.sh" #repository not working =(
   config.vm.provision :shell, :path => "scripts/final.sh"
 
