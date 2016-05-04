@@ -30,6 +30,7 @@ sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "$PG_CONF"
 echo "local   all             all                                     trust" > "$PG_HBA"
 echo "host    all             all             127.0.0.1/32            trust" >> "$PG_HBA"
 echo "host    all             all             ::1/128                 trust" >> "$PG_HBA"
+echo "host    all             all             all                 trust" >> "$PG_HBA"
 
 # Explicitly set default client_encoding
 echo "client_encoding = utf8" >> "$PG_CONF"
