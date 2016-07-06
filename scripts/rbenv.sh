@@ -38,7 +38,8 @@ rbenv install -v "$RUBY_VERSION"
 rbenv global "$RUBY_VERSION"
 
 gem install bundler
-gem install rails
+# Install rails 5
+gem install rails --pre
 rbenv rehash
 
 sudo chown -R vagrant:vagrant /home/vagrant/.bash_profile

@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # end
 
 
-  #config.vm.box_url = "file:///"
+  #config.vm.box_url = "file:///home/alexishida/vagrant/boxs/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.box = "ubuntu/trusty64"
 
 
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
 
   config.vm.provider "virtualbox" do |vb|
-     vb.memory = 4096
+     vb.memory = 6144
      vb.cpus = 4
   end
 
