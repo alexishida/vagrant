@@ -1,7 +1,7 @@
 #!/bin/sh -e
 echo '-- Provisionando -> ruby.sh --'
 
-RUBY_VERSION=2.3.1
+RUBY_VERSION=2.4.1
 
 sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 
